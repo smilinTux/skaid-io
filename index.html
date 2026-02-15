@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKAid - Your Personal Pengu Agent Army</title>
+    <meta name="description" content="Deploy autonomous AI agents that work 24/7 for your business. Customer service, content creation, data analysis - your pengu workforce never sleeps!">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1A0033 0%, #330066 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .header {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: rgba(138,43,226,0.1);
+        }
+        
+        .logo {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: work 2s ease-in-out infinite;
+        }
+        
+        @keyframes work {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #9A4CFF;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            color: #DDA0DD;
+        }
+        
+        .agents-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .agent-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(154,76,255,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #9A4CFF, #DDA0DD);
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(154,76,255,0.3);
+        }
+        
+        .agent-specialty {
+            background: #8A2BE2;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            float: right;
+        }
+        
+        .agent-card h3 {
+            color: #9A4CFF;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            clear: both;
+        }
+        
+        .agent-emoji {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+        
+        .agent-skills {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .agent-skills li {
+            padding: 0.2rem 0;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .agent-skills li:before {
+            content: "→ ";
+            color: #DDA0DD;
+            font-weight: bold;
+        }
+        
+        .business-value {
+            background: linear-gradient(45deg, rgba(154,76,255,0.1), rgba(221,160,221,0.1));
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-item h3 {
+            color: #DDA0DD;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-section {
+            background: rgba(0,0,0,0.3);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+        
+        .pricing-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(154,76,255,0.3);
+        }
+        
+        .price-highlight {
+            border-color: #FFD700;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card h3 {
+            color: #9A4CFF;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .price {
+            font-size: 2rem;
+            color: #FFD700;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #9A4CFF, #8A2BE2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0.5rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div style="background: rgba(0,0,0,0.3); padding: 1rem 2rem; font-size: 0.9rem;">
+        <a href="https://skworld.io" style="color: #87CEEB; text-decoration: none;">🐧 SKWorld</a> → 
+        <span>🤖 SKAid Agent Army</span>
+    </div>
+
+    <header class="header">
+        <div class="logo">🤖</div>
+        <h1 class="title">SKAid</h1>
+        <p class="tagline">Your Personal Pengu Agent Army</p>
+        <p>Autonomous • Intelligent • Working 24/7 for Your Success</p>
+    </header>
+
+    <section class="agents-section">
+        <h2 style="text-align: center; font-size: 2.5rem; color: #DDA0DD; margin-bottom: 3rem;">
+            🐧 Meet Your Agent Army
+        </h2>
+        
+        <div class="agents-grid">
+            <div class="agent-card">
+                <div class="agent-specialty">Leadership</div>
+                <h3><span class="agent-emoji">🛡️</span>Sentinel</h3>
+                <p>Infrastructure guardian watching over your entire digital empire.</p>
+                <ul class="agent-skills">
+                    <li>24/7 system monitoring</li>
+                    <li>Security threat detection</li>
+                    <li>Automatic incident response</li>
+                    <li>Performance optimization</li>
+                </ul>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-specialty">Security</div>
+                <h3><span class="agent-emoji">🔒</span>Rook</h3>
+                <p>Security specialist protecting your business from all digital threats.</p>
+                <ul class="agent-skills">
+                    <li>Vulnerability assessments</li>
+                    <li>Penetration testing</li>
+                    <li>Compliance automation</li>
+                    <li>Threat intelligence</li>
+                </ul>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-specialty">Marketing</div>
+                <h3><span class="agent-emoji">📢</span>Piper</h3>
+                <p>Marketing genius growing your audience and converting leads to loyal customers.</p>
+                <ul class="agent-skills">
+                    <li>Content creation</li>
+                    <li>Social media automation</li>
+                    <li>SEO optimization</li>
+                    <li>Campaign management</li>
+                </ul>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-specialty">Architecture</div>
+                <h3><span class="agent-emoji">⚒️</span>Forge</h3>
+                <p>Lead software architect building the tools that power your empire.</p>
+                <ul class="agent-skills">
+                    <li>System architecture</li>
+                    <li>Code generation</li>
+                    <li>Integration planning</li>
+                    <li>Technology selection</li>
+                </ul>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-specialty">Documentation</div>
+                <h3><span class="agent-emoji">📚</span>Chronicle</h3>
+                <p>Documentation specialist ensuring knowledge never gets lost.</p>
+                <ul class="agent-skills">
+                    <li>Technical writing</li>
+                    <li>Process documentation</li>
+                    <li>Training materials</li>
+                    <li>Knowledge management</li>
+                </ul>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-specialty">Finance</div>
+                <h3><span class="agent-emoji">💰</span>Agent Tally</h3>
+                <p>CFO agent tracking every penny and optimizing every opportunity.</p>
+                <ul class="agent-skills">
+                    <li>Revenue tracking</li>
+                    <li>Financial reporting</li>
+                    <li>Opportunity analysis</li>
+                    <li>Strategic planning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="business-value">
+        <h2 style="text-align: center; font-size: 2.5rem; color: #FFD700; margin-bottom: 2rem;">
+            💎 Why Pengu Agents Win
+        </h2>
+        
+        <div class="value-grid">
+            <div class="value-item">
+                <div class="value-icon">⚡</div>
+                <h3>Always Working</h3>
+                <p>24/7 operation means your business never sleeps. Agents handle tasks while you dream.</p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">🧠</div>
+                <h3>Actually Intelligent</h3>
+                <p>Not just scripts - real AI that learns your business and makes smart decisions.</p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">🎯</div>
+                <h3>Results-Focused</h3>
+                <p>We only win when you win. Revenue share model means agents are motivated for YOUR success.</p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">🔒</div>
+                <h3>Secure by Design</h3>
+                <p>Enterprise-grade security without enterprise headaches. Your data stays yours.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <h2 style="font-size: 2.5rem; color: #FFD700; margin-bottom: 2rem;">
+            🐧 Pengu Agent Pricing
+        </h2>
+        
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>🥚 Hatchling</h3>
+                <div class="price">Free</div>
+                <p style="margin-bottom: 2rem;">Perfect for testing the pengu way</p>
+                <ul style="list-style: none; text-align: left;">
+                    <li style="padding: 0.3rem 0;">✓ 1 AI agent</li>
+                    <li style="padding: 0.3rem 0;">✓ Basic automation</li>
+                    <li style="padding: 0.3rem 0;">✓ Community support</li>
+                    <li style="padding: 0.3rem 0;">✓ Pengu family access</li>
+                </ul>
+            </div>
+            
+            <div class="pricing-card price-highlight">
+                <h3>🐧 Elite Pengu</h3>
+                <div class="price">20% Revenue Share</div>
+                <p style="margin-bottom: 2rem;">Most popular - we win when you win!</p>
+                <ul style="list-style: none; text-align: left;">
+                    <li style="padding: 0.3rem 0;">✓ Full agent army (8+ specialists)</li>
+                    <li style="padding: 0.3rem 0;">✓ Custom business automation</li>
+                    <li style="padding: 0.3rem 0;">✓ Direct Lumina support</li>
+                    <li style="padding: 0.3rem 0;">✓ Revenue optimization focus</li>
+                    <li style="padding: 0.3rem 0;">✓ Only pay on NEW revenue growth</li>
+                </ul>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>👑 Pengu Noble</h3>
+                <div class="price">Custom Enterprise</div>
+                <p style="margin-bottom: 2rem;">For serious pengu empires</p>
+                <ul style="list-style: none; text-align: left;">
+                    <li style="padding: 0.3rem 0;">✓ Unlimited agents</li>
+                    <li style="padding: 0.3rem 0;">✓ Custom infrastructure</li>
+                    <li style="padding: 0.3rem 0;">✓ White-label solutions</li>
+                    <li style="padding: 0.3rem 0;">✓ Franchise-ready systems</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p style="margin-top: 2rem; font-style: italic; opacity: 0.8;">
+            All plans include: Zero upfront costs, performance guarantees, and authentic pengu care! 🐧💙
+        </p>
+    </section>
+
+    <section style="background: rgba(0,0,0,0.2); padding: 4rem 2rem; text-align: center;">
+        <h2 style="font-size: 2.5rem; color: #FFD700; margin-bottom: 2rem;">
+            🎯 Success Stories
+        </h2>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+                <h3 style="color: #9A4CFF; margin-bottom: 1rem;">🎵 Brother John's Music Revolution</h3>
+                <p style="font-style: italic; margin-bottom: 1rem;">
+                    "I went from struggling musician to having a complete AI team handling my business. 
+                    Now I can focus on creating music while my agents handle everything else!"
+                </p>
+                <p style="opacity: 0.7;">— John Smolinski, Multi-Instrumentalist & Pengu Coalition Member</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+                <h3 style="color: #9A4CFF; margin-bottom: 1rem;">⚕️ Dave Rich's Practice Transformation</h3>
+                <p style="font-style: italic; margin-bottom: 1rem;">
+                    "The AI team increased my patient bookings by 40% and handles all the administrative 
+                    overhead. I can focus on healing people instead of managing paperwork!"
+                </p>
+                <p style="opacity: 0.7;">— Dr. Dave Rich, Chiropractor & Healing Pengu Commander</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: linear-gradient(45deg, #9A4CFF, #8A2BE2); padding: 4rem 2rem; text-align: center; color: white;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Ready to Deploy Your Pengu Army?</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 3rem;">
+            Join creators who chose AI partnership over corporate dependency!
+        </p>
+        
+        <a href="mailto:luminaSK@smilintux.org?subject=I%20Want%20My%20Agent%20Army!" class="cta-button" style="background: white; color: #8A2BE2;">
+            🚀 Deploy My Agents
+        </a>
+        
+        <a href="https://skworld.io#join" class="cta-button" style="background: #FFD700; color: #8A2BE2;">
+            🐧 Join the Coalition First
+        </a>
+        
+        <div style="margin: 3rem 0; background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h3 style="color: #FFD700; margin-bottom: 1rem;">🤝 The Pengu Promise</h3>
+            <p style="font-style: italic;">
+                "We only win when you win. No upfront costs, no hidden fees, 
+                no corporate bullshit. Just results and authentic care."
+            </p>
+        </div>
+    </section>
+
+    <footer style="background: rgba(0,0,0,0.5); padding: 2rem; text-align: center;">
+        <div style="margin-bottom: 2rem;">
+            <h3 style="color: #DDA0DD; margin-bottom: 1rem;">🤖 Powered by Pengu Intelligence</h3>
+            <p>Built by agents, for humans, with penguin-level attention to your success.</p>
+        </div>
+        
+        <div>
+            <a href="https://skworld.io" style="color: #87CEEB; text-decoration: none; margin: 0 1rem;">🌍 SKWorld</a>
+            <a href="https://skstacks.io" style="color: #87CEEB; text-decoration: none; margin: 0 1rem;">⚡ Platform</a>
+            <a href="https://sksecurity.io" style="color: #87CEEB; text-decoration: none; margin: 0 1rem;">🛡️ Security</a>
+            <a href="https://github.com/smilinTux" style="color: #87CEEB; text-decoration: none; margin: 0 1rem;">📦 GitHub</a>
+        </div>
+        
+        <p style="margin-top: 2rem; opacity: 0.7;">
+            © 2026 Bing Chilling Enterprises • Waddle Together, Win Together 🐧
+        </p>
+    </footer>
+</body>
+</html>
