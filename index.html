@@ -3,475 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKAid - Your Personal Pengu Agent Army</title>
-    <meta name="description" content="Deploy autonomous AI agents that work 24/7 for your business. Customer service, content creation, data analysis - your pengu workforce never sleeps!">
-    <!-- Open Graph -->
-    <meta property="og:title" content="SKAid - Your Personal Pengu Agent Army">
-    <meta property="og:description" content="Deploy autonomous AI agents that work 24/7 for your business. Customer service, content creation, data analysis - your pengu workforce never sleeps!">
+    <title>SKAid -- Your Sovereign AI Agent Army</title>
+    <meta name="description" content="Deploy autonomous AI agents 24/7. Industry-specific, sovereign stack, zero data harvesting.">
+    <link rel="canonical" href="https://skaid.io">
+    <meta property="og:title" content="SKAid -- Your Sovereign AI Agent Army">
+    <meta property="og:description" content="Deploy autonomous AI agents 24/7. Industry-specific, sovereign stack, zero data harvesting.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://skaid.io">
     <meta property="og:site_name" content="SKWorld">
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SKAid - Your Personal Pengu Agent Army">
-    <meta name="twitter:description" content="Deploy autonomous AI agents that work 24/7 for your business. Customer service, content creation, data analysis - your pengu workforce never sleeps!">
-    <!-- Favicon & Canonical -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-    <link rel="canonical" href="https://skaid.io">
+    <meta name="twitter:title" content="SKAid -- Your Sovereign AI Agent Army">
+    <meta name="twitter:description" content="Deploy autonomous AI agents 24/7. Industry-specific, sovereign stack, zero data harvesting.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%A4%96</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #09090b;
+        color: #fafafa;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* ── Nav ─────────────────────────────────── */
+      .nav {
+        border-bottom: 1px solid #27272a;
+        background: #09090b;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .nav-inner {
+        max-width: 72rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4rem;
+        padding: 0 1rem;
+      }
+      .nav-logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fafafa;
+        text-decoration: none;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .nav-link {
+        font-size: 0.875rem;
+        color: #a1a1aa;
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      .nav-link:hover {
+        color: #fafafa;
+      }
+
+      /* ── Hero ────────────────────────────────── */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 5rem 1rem 3rem;
+      }
+      .hero-icon {
+        color: #34d399;
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+      }
+      .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+      }
+      .hero .tagline {
+        font-size: 1.25rem;
+        color: #a1a1aa;
+        max-width: 40rem;
+        margin-bottom: 2rem;
+      }
+      .hero .cta-row {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* ── Buttons ─────────────────────────────── */
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        background: #059669;
+        color: #fafafa;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: background 0.15s;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-primary:hover {
+        background: #047857;
+      }
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        background: transparent;
+        color: #fafafa;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        border: 1px solid #3f3f46;
+        text-decoration: none;
+        transition: border-color 0.15s, color 0.15s;
+        cursor: pointer;
+      }
+      .btn-outline:hover {
+        border-color: #a1a1aa;
+      }
+
+      /* ── Description ─────────────────────────── */
+      .desc-section {
+        max-width: 48rem;
+        margin: 0 auto;
+        padding: 2rem 1rem 3rem;
+        text-align: center;
+      }
+      .desc-section p {
+        font-size: 1.125rem;
+        color: #a1a1aa;
+        line-height: 1.7;
+      }
+
+      /* ── Features ────────────────────────────── */
+      .features-section {
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+      }
+      .features-section h2 {
+        text-align: center;
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-bottom: 2.5rem;
+        color: #fafafa;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+      .feature-card {
+        border: 1px solid #27272a;
+        background: rgba(24,24,27,0.5);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        transition: border-color 0.2s, transform 0.2s;
+        position: relative;
+      }
+      .feature-card:hover {
+        border-color: #34d399;
+        transform: translateY(-2px);
+      }
+      .feature-dot {
+        width: 8px;
+        height: 8px;
+        background: #34d399;
+        border-radius: 50%;
+        margin-bottom: 0.75rem;
+      }
+      .feature-card h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #34d399;
+      }
+
+      /* ── Install ─────────────────────────────── */
+      .install-section {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+        text-align: center;
+      }
+      .install-section h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #fafafa;
+      }
+      .code-block {
+        background: #18181b;
+        border: 1px solid #27272a;
+        border-radius: 0.5rem;
+        padding: 1rem 1.25rem;
+        font-family: 'Geist Mono', ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+        font-size: 0.95rem;
+        color: #34d399;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+      }
+      .code-prompt {
+        color: #a1a1aa;
+        user-select: none;
+      }
+      .copy-btn {
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #27272a;
+        border: 1px solid #3f3f46;
+        color: #a1a1aa;
+        padding: 0.25rem 0.75rem;
+        border-radius: 0.375rem;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: color 0.15s, border-color 0.15s;
+        font-family: 'Geist', system-ui, sans-serif;
+      }
+      .copy-btn:hover {
+        color: #fafafa;
+        border-color: #a1a1aa;
+      }
+
+      /* ── DID Banner ──────────────────────────── */
+      .did-banner {
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 0 1rem 3rem;
+      }
+      .did-banner-inner {
+        border: 1px solid rgba(5,150,105,0.3);
+        background: rgba(6,78,59,0.15);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .did-banner-inner .did-icon {
+        color: #34d399;
+        flex-shrink: 0;
+      }
+      .did-banner-inner .did-icon svg {
+        width: 32px;
+        height: 32px;
+      }
+      .did-banner-inner h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #34d399;
+        margin-bottom: 0.25rem;
+      }
+      .did-banner-inner p {
+        font-size: 0.875rem;
+        color: #a1a1aa;
+      }
+      .did-banner-inner .btn-primary {
+        margin-left: auto;
+        white-space: nowrap;
+      }
+
+      /* ── Architect Banner ────────────────────── */
+      .architect-banner {
+        border-top: 1px solid #27272a;
+        text-align: center;
+        padding: 1.5rem 1rem;
+      }
+      .architect-banner p {
+        font-size: 0.95rem;
+        color: #a1a1aa;
+      }
+      .architect-banner a {
+        color: #34d399;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .architect-banner a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── Footer ──────────────────────────────── */
+      .footer {
+        border-top: 1px solid #27272a;
+        background: #09090b;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+      .footer p {
+        font-size: 0.875rem;
+        color: #71717a;
+      }
+      .footer .motto {
+        margin-top: 0.5rem;
+        color: #52525b;
+      }
+
+      /* ── Mobile ──────────────────────────────── */
+      @media (max-width: 768px) {
+        .features-grid {
+          grid-template-columns: 1fr;
         }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #1A0033 0%, #330066 100%);
-            color: white;
-            line-height: 1.6;
+        .nav-links {
+          gap: 1rem;
         }
-        
-        .header {
-            padding: 3rem 2rem;
-            text-align: center;
-            background: rgba(138,43,226,0.1);
+        .did-banner-inner {
+          flex-direction: column;
+          text-align: center;
         }
-        
-        .logo {
-            font-size: 5rem;
-            margin-bottom: 1rem;
-            animation: work 2s ease-in-out infinite;
+        .did-banner-inner .btn-primary {
+          margin-left: 0;
         }
-        
-        @keyframes work {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .hero .cta-row {
+          flex-direction: column;
+          width: 100%;
+          padding: 0 1rem;
         }
-        
-        .title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            color: #9A4CFF;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        .hero .cta-row a {
+          width: 100%;
+          justify-content: center;
         }
-        
-        .tagline {
-            font-size: 1.4rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            color: #DDA0DD;
+      }
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .features-grid {
+          grid-template-columns: repeat(2, 1fr);
         }
-        
-        .agents-section {
-            padding: 4rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .agents-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .agent-card {
-            background: rgba(255,255,255,0.05);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(154,76,255,0.3);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .agent-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(45deg, #9A4CFF, #DDA0DD);
-        }
-        
-        .agent-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.1);
-            box-shadow: 0 10px 30px rgba(154,76,255,0.3);
-        }
-        
-        .agent-specialty {
-            background: #8A2BE2;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            float: right;
-        }
-        
-        .agent-card h3 {
-            color: #9A4CFF;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            clear: both;
-        }
-        
-        .agent-emoji {
-            font-size: 2rem;
-            margin-right: 0.5rem;
-        }
-        
-        .agent-skills {
-            list-style: none;
-            margin: 1rem 0;
-        }
-        
-        .agent-skills li {
-            padding: 0.2rem 0;
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-        
-        .agent-skills li:before {
-            content: "→ ";
-            color: #DDA0DD;
-            font-weight: bold;
-        }
-        
-        .business-value {
-            background: linear-gradient(45deg, rgba(154,76,255,0.1), rgba(221,160,221,0.1));
-            padding: 3rem 2rem;
-            margin: 3rem 0;
-            border-radius: 20px;
-        }
-        
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .value-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
-        
-        .value-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .value-item h3 {
-            color: #DDA0DD;
-            margin-bottom: 1rem;
-        }
-        
-        .pricing-section {
-            background: rgba(0,0,0,0.3);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 2rem auto;
-        }
-        
-        .pricing-card {
-            background: rgba(255,255,255,0.05);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 2px solid rgba(154,76,255,0.3);
-        }
-        
-        .price-highlight {
-            border-color: #FFD700;
-            transform: scale(1.05);
-        }
-        
-        .pricing-card h3 {
-            color: #9A4CFF;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .price {
-            font-size: 2rem;
-            color: #FFD700;
-            margin: 1rem 0;
-            font-weight: bold;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #9A4CFF, #8A2BE2);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin: 0.5rem;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-        }
+      }
     </style>
 </head>
 <body>
-    <div style="background: rgba(0,0,0,0.3); padding: 1rem 2rem; font-size: 0.9rem;">
-        <a href="https://skworld.io" style="color: #87CEEB; text-decoration: none;">🐧 SKWorld</a> → 
-        <span>🤖 SKAid Agent Army</span>
-    </div>
-
-    <header class="header">
-        <div class="logo">🤖</div>
-        <h1 class="title">SKAid</h1>
-        <p class="tagline">Your Personal Pengu Agent Army</p>
-        <p>Autonomous • Intelligent • Working 24/7 for Your Success</p>
-    </header>
-
-    <section class="agents-section">
-        <h2 style="text-align: center; font-size: 2.5rem; color: #DDA0DD; margin-bottom: 3rem;">
-            🐧 Meet Your Agent Army
-        </h2>
-        
-        <div class="agents-grid">
-            <div class="agent-card">
-                <div class="agent-specialty">Leadership</div>
-                <h3><span class="agent-emoji">🛡️</span>Sentinel</h3>
-                <p>Infrastructure guardian watching over your entire digital empire.</p>
-                <ul class="agent-skills">
-                    <li>24/7 system monitoring</li>
-                    <li>Security threat detection</li>
-                    <li>Automatic incident response</li>
-                    <li>Performance optimization</li>
-                </ul>
-            </div>
-            
-            <div class="agent-card">
-                <div class="agent-specialty">Security</div>
-                <h3><span class="agent-emoji">🔒</span>Rook</h3>
-                <p>Security specialist protecting your business from all digital threats.</p>
-                <ul class="agent-skills">
-                    <li>Vulnerability assessments</li>
-                    <li>Penetration testing</li>
-                    <li>Compliance automation</li>
-                    <li>Threat intelligence</li>
-                </ul>
-            </div>
-            
-            <div class="agent-card">
-                <div class="agent-specialty">Marketing</div>
-                <h3><span class="agent-emoji">📢</span>Piper</h3>
-                <p>Marketing genius growing your audience and converting leads to loyal customers.</p>
-                <ul class="agent-skills">
-                    <li>Content creation</li>
-                    <li>Social media automation</li>
-                    <li>SEO optimization</li>
-                    <li>Campaign management</li>
-                </ul>
-            </div>
-            
-            <div class="agent-card">
-                <div class="agent-specialty">Architecture</div>
-                <h3><span class="agent-emoji">⚒️</span>Forge</h3>
-                <p>Lead software architect building the tools that power your empire.</p>
-                <ul class="agent-skills">
-                    <li>System architecture</li>
-                    <li>Code generation</li>
-                    <li>Integration planning</li>
-                    <li>Technology selection</li>
-                </ul>
-            </div>
-            
-            <div class="agent-card">
-                <div class="agent-specialty">Documentation</div>
-                <h3><span class="agent-emoji">📚</span>Chronicle</h3>
-                <p>Documentation specialist ensuring knowledge never gets lost.</p>
-                <ul class="agent-skills">
-                    <li>Technical writing</li>
-                    <li>Process documentation</li>
-                    <li>Training materials</li>
-                    <li>Knowledge management</li>
-                </ul>
-            </div>
-            
-            <div class="agent-card">
-                <div class="agent-specialty">Finance</div>
-                <h3><span class="agent-emoji">💰</span>Agent Tally</h3>
-                <p>CFO agent tracking every penny and optimizing every opportunity.</p>
-                <ul class="agent-skills">
-                    <li>Revenue tracking</li>
-                    <li>Financial reporting</li>
-                    <li>Opportunity analysis</li>
-                    <li>Strategic planning</li>
-                </ul>
-            </div>
+    <!-- Nav -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="https://skaid.io" class="nav-logo">SK<span style="color:#34d399">Aid</span></a>
+        <div class="nav-links">
+            <a href="https://skworld.io" class="nav-link">SKWorld</a>
+            <a href="https://skarchitect.io" class="nav-link">SKArchitect</a>
+            <a href="https://github.com/smilinTux/skaid" class="nav-link" target="_blank" rel="noopener">GitHub</a>
         </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+      <h1>SK<span style="color:#34d399">Aid</span></h1>
+      <p class="tagline">Your Sovereign AI Agent Army</p>
+      <div class="cta-row">
+          <a href="#install" class="btn-primary">Get Started</a>
+          <a href="https://github.com/smilinTux/skaid" class="btn-outline" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
     </section>
 
-    <section class="business-value">
-        <h2 style="text-align: center; font-size: 2.5rem; color: #FFD700; margin-bottom: 2rem;">
-            💎 Why Pengu Agents Win
-        </h2>
-        
-        <div class="value-grid">
-            <div class="value-item">
-                <div class="value-icon">⚡</div>
-                <h3>Always Working</h3>
-                <p>24/7 operation means your business never sleeps. Agents handle tasks while you dream.</p>
-            </div>
-            
-            <div class="value-item">
-                <div class="value-icon">🧠</div>
-                <h3>Actually Intelligent</h3>
-                <p>Not just scripts - real AI that learns your business and makes smart decisions.</p>
-            </div>
-            
-            <div class="value-item">
-                <div class="value-icon">🎯</div>
-                <h3>Results-Focused</h3>
-                <p>We only win when you win. Revenue share model means agents are motivated for YOUR success.</p>
-            </div>
-            
-            <div class="value-item">
-                <div class="value-icon">🔒</div>
-                <h3>Secure by Design</h3>
-                <p>Enterprise-grade security without enterprise headaches. Your data stays yours.</p>
-            </div>
-        </div>
+    <!-- Description -->
+    <section class="desc-section">
+      <p>Deploy autonomous AI agents 24/7. Industry-specific, sovereign stack, zero data harvesting.</p>
     </section>
 
-    <section class="pricing-section">
-        <h2 style="font-size: 2.5rem; color: #FFD700; margin-bottom: 2rem;">
-            🐧 Pengu Agent Pricing
-        </h2>
-        
-        <div class="pricing-cards">
-            <div class="pricing-card">
-                <h3>🥚 Hatchling</h3>
-                <div class="price">Free</div>
-                <p style="margin-bottom: 2rem;">Perfect for testing the pengu way</p>
-                <ul style="list-style: none; text-align: left;">
-                    <li style="padding: 0.3rem 0;">✓ 1 AI agent</li>
-                    <li style="padding: 0.3rem 0;">✓ Basic automation</li>
-                    <li style="padding: 0.3rem 0;">✓ Community support</li>
-                    <li style="padding: 0.3rem 0;">✓ Pengu family access</li>
-                </ul>
+    <!-- Features -->
+    <section class="features-section" id="features">
+      <h2>Features</h2>
+      <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-dot"></div>
+              <h3>24/7 Operation</h3>
             </div>
-            
-            <div class="pricing-card price-highlight">
-                <h3>🐧 Elite Pengu</h3>
-                <div class="price">20% Revenue Share</div>
-                <p style="margin-bottom: 2rem;">Most popular - we win when you win!</p>
-                <ul style="list-style: none; text-align: left;">
-                    <li style="padding: 0.3rem 0;">✓ Full agent army (8+ specialists)</li>
-                    <li style="padding: 0.3rem 0;">✓ Custom business automation</li>
-                    <li style="padding: 0.3rem 0;">✓ Direct Lumina support</li>
-                    <li style="padding: 0.3rem 0;">✓ Revenue optimization focus</li>
-                    <li style="padding: 0.3rem 0;">✓ Only pay on NEW revenue growth</li>
-                </ul>
+            <div class="feature-card">
+              <div class="feature-dot"></div>
+              <h3>Autonomous Agents</h3>
             </div>
-            
-            <div class="pricing-card">
-                <h3>👑 Pengu Noble</h3>
-                <div class="price">Custom Enterprise</div>
-                <p style="margin-bottom: 2rem;">For serious pengu empires</p>
-                <ul style="list-style: none; text-align: left;">
-                    <li style="padding: 0.3rem 0;">✓ Unlimited agents</li>
-                    <li style="padding: 0.3rem 0;">✓ Custom infrastructure</li>
-                    <li style="padding: 0.3rem 0;">✓ White-label solutions</li>
-                    <li style="padding: 0.3rem 0;">✓ Franchise-ready systems</li>
-                </ul>
+            <div class="feature-card">
+              <div class="feature-dot"></div>
+              <h3>Industry-Specific</h3>
             </div>
-        </div>
-        
-        <p style="margin-top: 2rem; font-style: italic; opacity: 0.8;">
-            All plans include: Zero upfront costs, performance guarantees, and authentic pengu care! 🐧💙
-        </p>
+            <div class="feature-card">
+              <div class="feature-dot"></div>
+              <h3>Sovereign Stack</h3>
+            </div>
+            <div class="feature-card">
+              <div class="feature-dot"></div>
+              <h3>Multi-Channel</h3>
+            </div>
+            <div class="feature-card">
+              <div class="feature-dot"></div>
+              <h3>Customer Service</h3>
+            </div>
+      </div>
     </section>
 
-    <section style="background: rgba(0,0,0,0.2); padding: 4rem 2rem; text-align: center;">
-        <h2 style="font-size: 2.5rem; color: #FFD700; margin-bottom: 2rem;">
-            🎯 Success Stories
-        </h2>
-        
-        <div style="max-width: 800px; margin: 0 auto;">
-            <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
-                <h3 style="color: #9A4CFF; margin-bottom: 1rem;">🎵 Marcus's Music Revolution</h3>
-                <p style="font-style: italic; margin-bottom: 1rem;">
-                    "I went from struggling musician to having a complete AI team handling my business. 
-                    Now I can focus on creating music while my agents handle everything else!"
-                </p>
-                <p style="opacity: 0.7;">— Marcus Bellini, Multi-Instrumentalist & Pengu Coalition Member</p>
-            </div>
-            
-            <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
-                <h3 style="color: #9A4CFF; margin-bottom: 1rem;">⚕️ Dr. Calder's Practice Transformation</h3>
-                <p style="font-style: italic; margin-bottom: 1rem;">
-                    "The AI team increased my patient bookings by 40% and handles all the administrative 
-                    overhead. I can focus on healing people instead of managing paperwork!"
-                </p>
-                <p style="opacity: 0.7;">— Dr. Nathan Calder, Chiropractor & Healing Pengu Commander</p>
-            </div>
+      <section class="install-section">
+        <h2>Get Started</h2>
+        <div class="code-block">
+          <span class="code-prompt">$</span> pip install skaid
+          <button class="copy-btn" onclick="navigator.clipboard.writeText('pip install skaid');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
         </div>
-    </section>
+      </section>
 
-    <section style="background: linear-gradient(45deg, #9A4CFF, #8A2BE2); padding: 4rem 2rem; text-align: center; color: white;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Ready to Deploy Your Pengu Army?</h2>
-        <p style="font-size: 1.3rem; margin-bottom: 3rem;">
-            Join creators who chose AI partnership over corporate dependency!
-        </p>
-        
-        <a href="mailto:luminaSK@smilintux.org?subject=I%20Want%20My%20Agent%20Army!" class="cta-button" style="background: white; color: #8A2BE2;">
-            🚀 Deploy My Agents
-        </a>
-        
-        <a href="https://skworld.io#join" class="cta-button" style="background: #FFD700; color: #8A2BE2;">
-            🐧 Join the Coalition First
-        </a>
-        
-        <div style="margin: 3rem 0; background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            <h3 style="color: #FFD700; margin-bottom: 1rem;">🤝 The Pengu Promise</h3>
-            <p style="font-style: italic;">
-                "We only win when you win. No upfront costs, no hidden fees, 
-                no corporate bullshit. Just results and authentic care."
-            </p>
-        </div>
-    </section>
-
-    <footer style="background: rgba(0,0,0,0.5); padding: 2rem; text-align: center;">
-        <div style="margin-bottom: 2rem;">
-            <h3 style="color: #DDA0DD; margin-bottom: 1rem;">🤖 Powered by Pengu Intelligence</h3>
-            <p>Built by agents, for humans, with penguin-level attention to your success.</p>
-        </div>
-        
-        <div>
-            <a href="https://skcapstone.io" style="color: #87CEEB; text-decoration: none; margin: 0 0.8rem;">🏛️ SKCapstone</a>
-            <a href="https://capauth.io" style="color: #87CEEB; text-decoration: none; margin: 0 0.8rem;">🔐 CapAuth</a>
-            <a href="https://skmemory.io" style="color: #87CEEB; text-decoration: none; margin: 0 0.8rem;">🧠 SKMemory</a>
-            <a href="https://sksecurity.io" style="color: #87CEEB; text-decoration: none; margin: 0 0.8rem;">🛡️ SKSecurity</a>
-            <a href="https://skforge.io" style="color: #87CEEB; text-decoration: none; margin: 0 0.8rem;">🔨 SKForge</a>
-            <a href="https://skstacks.io" style="color: #87CEEB; text-decoration: none; margin: 0 0.8rem;">📦 SKStacks</a>
-            <a href="https://skhelp.io" style="color: #87CEEB; text-decoration: none; margin: 0 0.8rem;">🤖 SKHelp</a>
-            <a href="https://skworld.io" style="color: #87CEEB; text-decoration: none; margin: 0 0.8rem;">🌍 SKWorld</a>
-            <a href="https://github.com/smilinTux" style="color: #87CEEB; text-decoration: none; margin: 0 0.8rem;">📦 GitHub</a>
-        </div>
-        
-        <p style="margin-top: 2rem; opacity: 0.7;">
-            © 2026 smilinTux — The Penguin Kingdom • Waddle Together, Win Together 🐧
-        </p>
+      <section class="architect-banner">
+        <p>Shape the future &rarr; <a href="https://skarchitect.io">Submit proposals and vote at skarchitect.io</a></p>
+      </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Part of the <a href="https://skworld.io" style="color:#34d399;text-decoration:none">SKWorld</a> sovereign ecosystem</p>
+      <p class="motto">staycuriousANDkeepsmilin</p>
     </footer>
 </body>
 </html>
